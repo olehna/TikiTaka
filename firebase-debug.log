@@ -1,0 +1,17 @@
+[debug] [2020-03-29T12:09:42.508Z] ----------------------------------------------------------------------
+[debug] [2020-03-29T12:09:42.510Z] Command:       /usr/bin/node /usr/bin/firebase database:profile
+[debug] [2020-03-29T12:09:42.510Z] CLI Version:   7.16.1
+[debug] [2020-03-29T12:09:42.510Z] Platform:      linux
+[debug] [2020-03-29T12:09:42.510Z] Node Version:  v12.16.1
+[debug] [2020-03-29T12:09:42.510Z] Time:          Sun Mar 29 2020 15:09:42 GMT+0300 (GMT+03:00)
+[debug] [2020-03-29T12:09:42.511Z] ----------------------------------------------------------------------
+[debug] [2020-03-29T12:09:42.511Z] 
+[debug] [2020-03-29T12:09:42.514Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-29T12:09:42.514Z] > authorizing via signed-in user
+[debug] [2020-03-29T12:09:42.515Z] [iam] checking project quiz-91601 for permissions ["firebase.projects.get","firebasedatabase.instances.update"]
+[debug] [2020-03-29T12:09:42.516Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/quiz-91601:testIamPermissions  
+
+[debug] [2020-03-29T12:09:43.584Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-29T12:09:43.586Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/quiz-91601  
+ 
+[debug] [2020-03-29T12:09:43.763Z] <<< HTTP RESPONSE 200

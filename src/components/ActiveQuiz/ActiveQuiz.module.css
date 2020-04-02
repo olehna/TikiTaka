@@ -1,0 +1,22 @@
+.ActiveQuiz {
+  padding: 20px;
+  color: #2D2D2D;
+  border-radius: 5px;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+
+.Question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background: rgb(246, 205, 99);
+  height: 100px;
+  text-align: center;
+  font-family: 'Muller Narrow Extra Light';
+  font-size: 16pt;
+  font-weight: 800;
+  letter-spacing:0.5pt
+  
+}
