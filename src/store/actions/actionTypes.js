@@ -13,3 +13,5 @@ export const RESET_QUIZ_CREATION = 'RESET_QUIZ_CREATION'
 
 export const AUTH_SUCCESS = 'AUTH_SUCCESS'
 export const AUTH_LOGOUT = 'AUTH_LOGOUT'
+
+export const QUIZ_SET_TIMER = 'QUIZ_SET_TIMER'
