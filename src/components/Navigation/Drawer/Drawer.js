@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classes from './Drawer.module.css'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Backdrop from '../../UI/Backdrop/Backdrop'
 class Drawer extends Component {
 
@@ -35,30 +35,27 @@ class Drawer extends Component {
     }
 
     const links = [
-      {to: '/', label: 'СПИСОК', exact: true, icon: 'bonus'}
+      {to: '/',}
     ]
 
     if (this.props.isAuthenticated) {
-      // links.push({to: '/loading', label: 'LOADING PAGE', exact: false, icon: 'cup'})
-      links.push({to: '/quiz-creator', label: 'СОЗДАТЬ ТЕСТ', exact: false, icon: 'rating'})
+      links.push({to: '/', label: ' ВЫБРАТЬ ТЕМУ', exact: true, icon: 'bonus'})
+      links.push({to: '/rating', label: 'РЕЙТИНГ', exact: false, icon: 'rating'})
+      links.push({ to: '/user', label: 'ЛИЧНЫЙ КАБИНЕТ', exact: false, icon: 'cup' })
       links.push({to: '/logout', label: 'ВЫЙТИ', exact: false, icon: 'settings'})
-      links.push({ to: '/user', label: 'Личный кабинет', exact: false })
     } else {
       links.push({to: '/auth', label: 'АВТОРИЗАЦИЯ', exact: false, icon: 'edit'})
       // links.push({to: '/loading', label: 'LOADING PAGE', exact: false, icon: 'cup'})
       // links.push({ to: '/quiz-creator', label: 'Создать тест', exact: false })
-      links.push({ to: '/logout', label: 'Выйти', exact: false })
+      // links.push({ to: '/logout', label: 'Выйти', exact: false })
       // links.push({ to: '/user', label: 'Личный кабинет', exact: false })
       // links.push({ to: '/loading', label: 'Loading page', exact: false })
-    // } else {
-    //   links.push({ to: '/auth', label: 'Авторизация', exact: false })
-    //   links.push({ to: '/loading', label: 'Loading page', exact: false })
+      // links.push({to: '/quiz-creator', label: 'СОЗДАТЬ ТЕСТ', exact: false, icon: 'rating'})
     }
 
     return (
       <React.Fragment>
         <nav className={cls.join(' ')}>
-
           <ul>
           <div onClick={this.onProfilePic} className={classes.boxLogo}><img src={'/ava.png'} alt="" className={classes.Ava} /></div>
           <div className={classes.userName}>Алёша Панин</div>

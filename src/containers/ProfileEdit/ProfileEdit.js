@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router'
-import { Link } from 'react-router-dom'
+// import { Redirect } from 'react-router'
+// import { Link } from 'react-router-dom'
 import Button from '../../components/UI/Button/Button'
 import classes from './ProfileEdit.module.css'
 // import Progressbar from '../../components/UI/progressbar/Progressbar'

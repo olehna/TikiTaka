@@ -14,30 +14,68 @@
     background-clip: border-box;
     -webkit-background-size: auto auto;
     background-size: auto auto;
-    
 }
 
 .QuizList h1 {
     color: #fff;
     font-family: 'Muller Narrow Extra Bold';
+    font-size: 50px;
 }
 
-.QuizList ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
+.cardTitle {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  background-color: #3672bf8c;
+  backdrop-filter: blur(30px);
+  width: 100%;
+  font-weight: bold;
+
+}
+.cardList a {
+  text-decoration: none;
 }
 
-.QuizList li {
-    margin-bottom: 10px;
+.card {
+  text-transform: uppercase;
+  background-color: #e7e3ed;
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 32px;
+  transition: all .4s;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.QuizList li a {
-    text-decoration: none;
-    color: #fff;
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px black;
+}
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+
 }
 
-.QuizList li a:hover {
-    color: #363f54;
+.cardList {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  width: 100%;
+  border-radius: 4px;
+  height: 100%;
+}
+.cardWrap {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 540px;
 }

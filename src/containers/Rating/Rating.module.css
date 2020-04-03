@@ -1,0 +1,65 @@
+.main {
+  background: linear-gradient(129.81deg, rgba(117,188,172,1) 0, rgba(0,0,0,0) 59%, rgba(0,0,0,0) 100%), linear-gradient(225deg, rgba(230,62,97) 0, rgba(0,0,0,0) 100%), linear-gradient(45deg, rgba(227,202,118,1) 0, rgba(0,0,0,0) 39%, rgba(0,0,0,0) 100%), linear-gradient(315deg, rgba(0,126,157,1) 0, rgba(0,126,157,0.31) 41%, rgba(0,0,0,0) 75%, rgba(0,0,0,0) 100%), rgb(255,255,255);
+
+}
+.wrapper {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title {
+  width: 100%;
+  margin-bottom: 100px;
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Muller Narrow Extra Bold';
+}
+table {
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+thead td {
+  color: #fff;
+  background-color: #eff6ff3b;
+  font-size: 40px;
+  text-shadow: 0 0 5px black;
+  border: none
+
+}
+
+tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+td {
+  /* border-bottom: 1px solid #ccc; */
+  border-collapse: separate;
+  padding: 10px;
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 0 0 5px black;
+}
+.iconLogoBox {
+  width: 60px;
+  margin-right: 10px;
+}
+.blockIcon {
+  display: flex;
+  align-items: center;
+}
+
+.iconLogoImg {
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: inline-block;
+}
+
+
