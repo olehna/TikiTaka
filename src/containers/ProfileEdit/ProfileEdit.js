@@ -3,7 +3,7 @@ import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 import Button from '../../components/UI/Button/Button'
 import classes from './ProfileEdit.module.css'
-import Progressbar from '../../components/UI/progressbar/Progressbar'
+// import Progressbar from '../../components/UI/progressbar/Progressbar'
 import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
 import Input from '../../components/UI/Input/Input'
 

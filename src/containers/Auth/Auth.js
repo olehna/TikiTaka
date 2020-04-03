@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import classes from './Auth.module.css'
 import Button from '../../components/UI/Button/Button'
-import Input from '../../components/UI/Input/Input'
+// import Input from '../../components/UI/Input/Input'
+import InputLogin from '../../components/UI/InputLogin/InputLogin'
+import Logo from '../../components/UI/Logo/Logo'
 import is from 'is_js'
 import {connect} from 'react-redux'
 import {auth} from '../../store/actions/auth'
@@ -15,6 +17,7 @@ class Auth extends Component {
         value: '',
         type: 'email',
         label: 'Email',
+        placeholder: 'Email',
         errorMessage: 'Введите корректный email',
         valid: false,
         touched: false,
@@ -27,6 +30,7 @@ class Auth extends Component {
         value: '',
         type: 'password',
         label: 'Пароль',
+        placeholder: 'Пароль',
         errorMessage: 'Введите корректный пароль',
         valid: false,
         touched: false,
@@ -106,13 +110,14 @@ class Auth extends Component {
     return Object.keys(this.state.formControls).map((controlName, index) => {
       const control = this.state.formControls[controlName]
       return (
-        <Input
+        <InputLogin
           key={controlName + index}
           type={control.type}
           value={control.value}
+          placeholder={control.placeholder}
           valid={control.valid}
           touched={control.touched}
-          label={control.label}
+          // label={control.label}
           shouldValidate={!!control.validation}
           errorMessage={control.errorMessage}
           onChange={event => this.onChangeHandler(event, controlName)}
@@ -124,13 +129,13 @@ class Auth extends Component {
   render() {
     return (
       <div className={classes.Auth}>
-        <div>
-          <h1>Авторизация</h1>
+        <div className={classes.main}>
+          < Logo />
 
           <form onSubmit={this.submitHandler} className={classes.AuthForm}>
 
             { this.renderInputs() }
-
+            <div className={classes.btnBlock}>
             <Button
               type="success"
               onClick={this.loginHandler}
@@ -144,8 +149,9 @@ class Auth extends Component {
               onClick={this.registerHandler}
               disabled={!this.state.isFormValid}
             >
-              Зарегистрироваться
+              Регистрация
             </Button>
+            </div>
           </form>
         </div>
       </div>

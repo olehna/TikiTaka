@@ -19,7 +19,8 @@ class Drawer extends Component {
             activeClassName={classes.active}
             onClick={this.clickHandler}
           >
-            {link.label}
+            {link.icon && <img className={classes.icon} src={`./img/Menu/${link.icon}.png`} alt="" />}
+           <span className={classes.text}> {link.label}</span>
           </NavLink>
         </li>
       )
@@ -34,17 +35,24 @@ class Drawer extends Component {
     }
 
     const links = [
-      { to: '/', label: 'Список', exact: true }
+      {to: '/', label: 'СПИСОК', exact: true, icon: 'bonus'}
     ]
 
     if (this.props.isAuthenticated) {
-      links.push({ to: '/quiz-creator', label: 'Создать тест', exact: false })
-      links.push({ to: '/logout', label: 'Выйти', exact: false })
+      // links.push({to: '/loading', label: 'LOADING PAGE', exact: false, icon: 'cup'})
+      links.push({to: '/quiz-creator', label: 'СОЗДАТЬ ТЕСТ', exact: false, icon: 'rating'})
+      links.push({to: '/logout', label: 'ВЫЙТИ', exact: false, icon: 'settings'})
       links.push({ to: '/user', label: 'Личный кабинет', exact: false })
-      links.push({ to: '/loading', label: 'Loading page', exact: false })
     } else {
-      links.push({ to: '/auth', label: 'Авторизация', exact: false })
-      links.push({ to: '/loading', label: 'Loading page', exact: false })
+      links.push({to: '/auth', label: 'АВТОРИЗАЦИЯ', exact: false, icon: 'edit'})
+      // links.push({to: '/loading', label: 'LOADING PAGE', exact: false, icon: 'cup'})
+      // links.push({ to: '/quiz-creator', label: 'Создать тест', exact: false })
+      links.push({ to: '/logout', label: 'Выйти', exact: false })
+      // links.push({ to: '/user', label: 'Личный кабинет', exact: false })
+      // links.push({ to: '/loading', label: 'Loading page', exact: false })
+    // } else {
+    //   links.push({ to: '/auth', label: 'Авторизация', exact: false })
+    //   links.push({ to: '/loading', label: 'Loading page', exact: false })
     }
 
     return (
@@ -52,11 +60,13 @@ class Drawer extends Component {
         <nav className={cls.join(' ')}>
 
           <ul>
-            <div onClick={this.onProfilePic}><img src={'/ava.png'} alt="" className={classes.Ava} /></div>
-            <div>Алёша</div>
-            {this.renderLinks(links)}
+          <div onClick={this.onProfilePic} className={classes.boxLogo}><img src={'/ava.png'} alt="" className={classes.Ava} /></div>
+          <div className={classes.userName}>Алёша Панин</div>
+            { this.renderLinks(links) }
           </ul>
-          <div>Связаться с нами</div>
+          <a href='./' className={classes.mail}>
+            <img className={classes.iconMail} src='./img/Menu/mail.png' alt=""/>
+            Связаться с нами</a>
         </nav>
         {this.props.isOpen ? <Backdrop onClick={this.props.onClose} /> : null}
       </React.Fragment>

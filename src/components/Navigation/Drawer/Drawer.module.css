@@ -1,46 +1,90 @@
+* {
+  padding: 0;
+}
 .Drawer {
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     width: 80%;
-    max-width: 300px;
+    max-width: 450px;
     padding: 20px 10px;
     box-sizing: border-box;
-    background: #fff;
+    background-color: rgba(29, 27, 27, 0.88);
+    backdrop-filter: blur(10px);
     transform: translateX(0px);
-    transition: transform .22s ease-in;
+    transition: transform .25s ease-in;
     z-index: 90;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 60px;
 }
 
 .Drawer.close {
-    transform: translateX(-300px);
+    transform: translateX(-450px);
 }
 
 .Drawer ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
+
 .Drawer ul li {
-    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);;
+    padding: 30px 0;
 }
 
 .Drawer ul li a {
     color: #363d54;
-    font-size: 30px;
+    font-size: 28px;
+    font-weight: 700;
     text-decoration: none;
-    background-color: #fff;
     position: relative;
-    padding: 0 20px 10px 20px;
+    color: #fff;
     transition: opacity .3s;
 }
 
-.Drawer ul li a:hover, .active {
+.Drawer ul li a:hover {
     opacity: .7;
+}
+.boxLogo {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .Ava{
-  width: 150px;
+  width: 200px;
+}
+.userName {
+  color: #ffffff;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 70px;
+}
+
+.mail {
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 10px black;
+  text-decoration: none;
+}
+
+.icon {
+  width: 30px;
+  margin-right: 20px;
+}
+.iconMail {
+  width: 35px;
+  margin-right: 20px;
 }

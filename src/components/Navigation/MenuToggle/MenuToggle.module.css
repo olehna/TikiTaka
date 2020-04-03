@@ -14,5 +14,6 @@
 }
 
 .MenuToggle.open {
-    left: 320px;
+    /* left: 320px; */
+    left: 480px;
 }
