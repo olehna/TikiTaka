@@ -3,7 +3,7 @@ import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 import Button from '../../components/UI/Button/Button'
 import classes from './Profile.module.css'
-import Progressbar from '../../components/UI/ProgressBar/Progressbar'
+// import Progressbar from '../../components/UI/ProgressBar/Progressbar'
 import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
 
 export default class Profile extends Component {
@@ -32,7 +32,7 @@ export default class Profile extends Component {
                 </h2>
 
                 <div className={classes.results}>
-                    <Progressbar width={`${width}%`} />
+                    {/* <Progressbar width={`${width}%`} /> */}
                     <div className={classes.resultNumbers}>
                         <p>ПОБЕДЫ<br /><span>{this.state.wins}</span></p>
                         <p>ПОРАЖЕНИЯ<br /><span>{this.state.defeats}</span></p>
