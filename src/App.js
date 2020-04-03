@@ -11,6 +11,7 @@ import Logout from './components/Logout/Logout'
 import {autoLogin} from './store/actions/auth';
 import ProfileEdit from './containers/ProfileEdit/ProfileEdit'
 import Profile from './containers/Profile/Profile'
+import Rating from './containers/Rating/Rating'
 
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route path="/auth" component={Auth} />
-        <Route path="/quiz/:id" component={Quiz} />
+        {/* <Route path="/quiz/:id" component={Quiz} /> */}
         <Route path="/" exact component={LoadingPage} />
         {/* <Route path="/" exact component={QuizList} /> */}
         {/* <Route path="/loading" exact component={LoadingPage} /> */}
@@ -41,7 +42,7 @@ class App extends Component {
           <Route path="/user/edit" component={ProfileEdit} />
           <Route path="/user" component={Profile} />
           <Route path="/" exact component={QuizList} />
-          {/* <Route path="/loading" exact component={LoadingPage} /> */}
+          <Route path="/rating" exact component={Rating} />
           <Redirect to="/" />
         </Switch>
       )

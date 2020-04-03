@@ -37,11 +37,13 @@
 
 .Input span {
   position: absolute;
-  color: #f01f30;
+  color: rgba(255,255,255, 0.5);
   font-size: 20px;
   font-weight: bold;
-  top: 40px;
-  right: 5px;
+  bottom: -30px;
+  right: 81px;
+  text-align: center;
+  width: 450px;
 }
 
 .Input.invalid label {
