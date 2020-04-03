@@ -1,10 +1,13 @@
 .FinishedQuiz {
     padding: 20px;
     color: #fff;
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
     border-radius: 5px;
     box-sizing: border-box;
-    margin: 0 10px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .FinishedQuiz ul {
@@ -17,10 +20,30 @@
     margin-left: 10px;
 }
 
+
+.FinishedQuiz h1{
+  font-family: 'Muller Narrow Extra Bold';
+  font-size: 32pt;
+  margin: 0;
+  text-align: center;
+}
+
+
 .success {
-    color: rgba(161, 240, 69, .7);
+    color: rgb(46, 182, 53);
+    font-size: 24pt;
 }
 
 .error {
     color: rgba(240, 87, 108, .7);
+    font-size: 24pt;
+}
+
+.Status{
+  background: rgba(255, 255, 255);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 4em;
 }

@@ -1,7 +1,7 @@
 .Quiz {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 50px;
   flex-grow: 1;
   width: 100%;
   background: -webkit-linear-gradient(-39.81deg, rgba(117,188,172,1) 0, rgba(0,0,0,0) 59%, rgba(0,0,0,0) 100%), -webkit-linear-gradient(-135deg, rgba(230,62,97) 0, rgba(0,0,0,0) 100%), -webkit-linear-gradient(45deg, rgba(227,202,118,1) 0, rgba(0,0,0,0) 39%, rgba(0,0,0,0) 100%), -webkit-linear-gradient(-225deg, rgba(0,126,157,1) 0, rgba(0,126,157,0.31) 41%, rgba(0,0,0,0) 75%, rgba(0,0,0,0) 100%), rgb(255,255,255);
