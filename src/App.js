@@ -9,6 +9,9 @@ import QuizCreator from './containers/QuizCreator/QuizCreator'
 import {connect} from 'react-redux'
 import Logout from './components/Logout/Logout'
 import {autoLogin} from './store/actions/auth';
+import ProfileEdit from './containers/ProfileEdit/ProfileEdit'
+import Profile from './containers/Profile/Profile'
+
 
 class App extends Component {
 
@@ -35,6 +38,8 @@ class App extends Component {
           <Route path="/quiz-creator" component={QuizCreator} />
           <Route path="/quiz/:id" component={Quiz} />
           <Route path="/logout" component={Logout} />
+          <Route path="/user/edit" component={ProfileEdit} />
+          <Route path="/user" component={Profile} />
           <Route path="/" exact component={QuizList} />
           {/* <Route path="/loading" exact component={LoadingPage} /> */}
           <Redirect to="/" />

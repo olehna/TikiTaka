@@ -1,9 +1,13 @@
 .ActiveQuiz {
   padding: 20px;
   color: #2D2D2D;
-  border-radius: 5px;
+
+  
   margin: 0 10px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .Question {
@@ -12,6 +16,7 @@
   align-items: center;
   border-radius: 5px;
   background: rgb(246, 205, 99);
+  padding: 5px;
   height: 100px;
   text-align: center;
   font-family: 'Muller Narrow Extra Light';
@@ -19,4 +24,39 @@
   font-weight: 800;
   letter-spacing:0.5pt
   
+}
+
+.Title{
+  font-family: 'Muller Narrow Extra Bold';
+  font-size: 32pt;
+  margin: 0;
+  align-self: flex-end;
+}
+
+.Progress{
+  text-align: right;
+  color: white;
+  z-index: 100;
+  /* top:10px;
+  position: relative; */
+}
+
+.imgWrap {
+  position: relative;
+}
+
+.imgWrap small {
+  position: absolute;
+  right: 5px;
+  text-align: center;
+  color: #2D2D2D;
+  border-radius: 2px;
+  bottom: 10px; 
+  width: 50px;
+  line-height: 2em;
+  background-color: rgb(255, 255, 255, 0.7);
+}
+.Image{
+  margin-top: 20px;
+  width:100%;
 }

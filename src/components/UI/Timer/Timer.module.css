@@ -1,0 +1,12 @@
+.Timer {
+  background: rgb(246, 205, 99, 0.7);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  font-family: 'Muller Narrow Extra Bold';
+  font-size: 28pt;
+  line-height: 2em;
+  columns: #b2b2b2;
+  align-self: top;
+}

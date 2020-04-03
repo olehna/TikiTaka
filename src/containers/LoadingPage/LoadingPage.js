@@ -3,7 +3,7 @@ import classes from './LoadingPage.module.css'
 // import Loader from '../../components/UI/Loader/Loader'
 import Loader2 from '../../components/UI/Loader2/Loader'
 import Logo from '../../components/UI/Logo/Logo'
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 class LoadingPage extends Component {
   render() {
     return (
@@ -22,16 +22,16 @@ class LoadingPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    loading: state.quiz.loading
-  }
-}
+// function mapStateToProps(state) {
+//   return {
+//     loading: state.quiz.loading
+//   }
+// }
 
-function mapDispatchToProps(dispatch) {
-  return {
+// function mapDispatchToProps(dispatch) {
+//   return {
     
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoadingPage)
+//   }
+// }
+export default LoadingPage
+// export default connect(mapStateToProps, mapDispatchToProps)(LoadingPage)
