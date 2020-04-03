@@ -17,7 +17,7 @@ export default class Profile extends Component {
     render() {
         const username = this.state.username
         const level = this.state.level
-        // const width = 100 * this.state.wins / (this.state.wins + this.state.defeats)
+        const width = 100 * this.state.wins / (this.state.wins + this.state.defeats)
         return (
             <div className={classes.wrapper}>
                 <div className={classes.profile}>
