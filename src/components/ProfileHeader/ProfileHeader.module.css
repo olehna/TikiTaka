@@ -8,6 +8,7 @@
     background-color: rgba(11, 14, 15, 0.6);
     font-family: 'Muller Narrow Extra Light';
     font-size: 40px;
+    border-radius: 5px;
     /* padding-left: 30px; */
     /* padding-right: 80px */
 }

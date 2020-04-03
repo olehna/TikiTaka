@@ -4,7 +4,8 @@ import {
   FETCH_QUIZES_ERROR,
   FETCH_QUIZES_START,
   FETCH_QUIZES_SUCCESS, FINISH_QUIZ, QUIZ_NEXT_QUESTION, QUIZ_RETRY,
-  QUIZ_SET_STATE
+  QUIZ_SET_STATE,
+  QUIZ_SET_TIMER
 } from './actionTypes'
 
 export function fetchQuizes() {
@@ -97,7 +98,16 @@ export function retryQuiz() {
   }
 }
 
+export function setTimer(second) {
+  return {
+    type: QUIZ_SET_TIMER,
+    second
+  }
+}
+
+
 export function quizAnswerClick(answerId) {
+  
   return (dispatch, getState) => {
     const state = getState().quiz
 
@@ -125,10 +135,19 @@ export function quizAnswerClick(answerId) {
           dispatch(quizNextQuestion(state.activeQuestion + 1))
         }
         window.clearTimeout(timeout)
-      }, 1000)
+      }, 500)
     } else {
       results[question.id] = 'error'
       dispatch(quizSetState({[answerId]: 'error'}, results))
+
+      const timeout = window.setTimeout(() => {
+        if (isQuizFinished(state)) {
+          dispatch(finishQuiz())
+        } else {
+          dispatch(quizNextQuestion(state.activeQuestion + 1))
+        }
+        window.clearTimeout(timeout)
+      }, 500)
     }
   }
 }
