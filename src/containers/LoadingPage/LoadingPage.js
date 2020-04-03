@@ -1,19 +1,23 @@
 import React, {Component} from 'react'
 import classes from './LoadingPage.module.css'
 import Loader from '../../components/UI/Loader/Loader'
+// import Logo from '../../components/UI/Logo/Logo'
 import Logo from '../../components/UI/Logo/Logo'
 import {connect} from 'react-redux'
 
-class LoadingPage extends Component {
+export default class LoadingPage extends Component {
+  state = {
+    loading: true
+  }
   render() {
     return (
       <div>
         <div>
-          <Logo />
+          {/* <Logo /> */}
           <h1 className={classes.AppTitle}>тики<br/>така</h1>
           <h3 className={classes.AppSubTitle}>интеллектуальные турниры</h3>
           {
-            this.props.loading 
+            this.state.loading 
               ? <Loader />
               : <div>Text</div>
           }
@@ -23,16 +27,16 @@ class LoadingPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    loading: state.quiz.loading
-  }
-}
+// function mapStateToProps(state) {
+//   return {
+//     loading: state.quiz.loading
+//   }
+// }
 
-function mapDispatchToProps(dispatch) {
-  return {
+// function mapDispatchToProps(dispatch) {
+//   return {
     
-  }
-}
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoadingPage)
+// export default connect(mapStateToProps, mapDispatchToProps)(LoadingPage)

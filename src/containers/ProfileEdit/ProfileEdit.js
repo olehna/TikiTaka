@@ -2,25 +2,30 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 import Button from '../../components/UI/Button/Button'
-import classes from './Profile.module.css'
+import classes from './ProfileEdit.module.css'
 import Progressbar from '../../components/UI/progressbar/Progressbar'
 import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
+import Input from '../../components/UI/Input/Input'
 
-export default class Profile extends Component {
+export default class ProfileEdit extends Component {
     state = {
         username: 'Алешка П.',
         level: 1,
         wins: 89,
         defeats: 88,
     }
-   
+
+    edit() {
+        alert('test alert дабы убедиться что кнопка рабоает')
+    }
+
     render() {
         const username = this.state.username
         const level = this.state.level
-        const width = 100 * this.state.wins / (this.state.wins + this.state.defeats)
+        
         return (
             <div className={classes.wrapper}>
-                <ProfileHeader text='профиль'/>
+                <ProfileHeader text='редактировать' />
 
                 <img className={classes.profilePic} src={'/profilepic.png'} alt='no pic' />
                 <h1 className={classes.username}>
@@ -31,16 +36,18 @@ export default class Profile extends Component {
                     {level} уровень
                 </h2>
 
-                <div className={classes.results}>
-                    <Progressbar width={`${width}%`} />
-                    <div className={classes.resultNumbers}>
-                        <p>ПОБЕДЫ<br /><span>{this.state.wins}</span></p>
-                        <p>ПОРАЖЕНИЯ<br /><span>{this.state.defeats}</span></p>
-                    </div>
-
-
+                <div className={classes.editForm}>
+                    <form >
+                        <label>ИМЯ</label><Input />
+                        <label>ФАМИЛИЯ</label><Input />
+                        <label>USERNAME</label><Input />
+                        <label>ПОЛ</label><Input />
+                        <label>ДАТА РОЖДЕНИЯ</label><Input />
+                        <Button onClick={() => this.edit()}>редактировать</Button>
+                    </form>
                 </div>
             </div>
+
         )
     }
 }
