@@ -3,6 +3,7 @@ import Layout from './hoc/Layout/Layout'
 import {Route, Switch, Redirect, withRouter} from 'react-router-dom'
 import Quiz from './containers/Quiz/Quiz'
 import QuizList from './containers/QuizList/QuizList'
+import LoadingPage from './containers/LoadingPage/LoadingPage'
 import Auth from './containers/Auth/Auth'
 import QuizCreator from './containers/QuizCreator/QuizCreator'
 import {connect} from 'react-redux'
@@ -21,7 +22,9 @@ class App extends Component {
       <Switch>
         <Route path="/auth" component={Auth} />
         <Route path="/quiz/:id" component={Quiz} />
-        <Route path="/" exact component={QuizList} />
+        <Route path="/" exact component={LoadingPage} />
+        {/* <Route path="/" exact component={QuizList} /> */}
+        {/* <Route path="/loading" exact component={LoadingPage} /> */}
         <Redirect to="/" />
       </Switch>
     )
@@ -33,6 +36,7 @@ class App extends Component {
           <Route path="/quiz/:id" component={Quiz} />
           <Route path="/logout" component={Logout} />
           <Route path="/" exact component={QuizList} />
+          {/* <Route path="/loading" exact component={LoadingPage} /> */}
           <Redirect to="/" />
         </Switch>
       )
