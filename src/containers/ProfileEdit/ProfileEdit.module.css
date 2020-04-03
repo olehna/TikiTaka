@@ -24,8 +24,6 @@
     background-size: auto auto;
 }
 
-
-
 .profilePic {
     width: 150px;
     height: 150px;
@@ -42,7 +40,8 @@
     font-family: 'Muller Narrow Extra Light';
     font-size: 40px;
 }
-.results {
+
+.editForm {
     /* padding-top: 30px; */
     flex-basis: 40%;
     width: 100%;
@@ -51,25 +50,10 @@
     justify-content: center;
     align-content: space-between;
     align-items: center;
-    background-color: rgba(11, 14, 15, 0.6);
+    background-color: rgba(11, 14, 15, 0.7);
 }
-.resultNumbers{
-    display: flex;
-     /* flex-basis: 50%; */
-     width: 80%;
-     
-}
-.resultNumbers p {
-    padding-left: 2rem;
-    /* padding: 10px; */
-    flex-basis: 50%;
-    /* height: 100%; */
+.editForm>label {
+    color: red;
     text-align: left;
-    font-size: 1rem;
+    padding: auto;
 }
-
-.results span {
-    font-size: 5rem;
-    font-family: 'Muller Narrow Extra Bold';
-}
-
