@@ -1,9 +1,18 @@
 .AnswerItem {
-  border: 1px solid #fff;
+  background: rgb(119, 119, 119,0.5);
   border-radius: 5px;
   padding: 5px 10px;
   margin-bottom: 5px;
   cursor: pointer;
+  width: 45%;
+  /* height: 50px; */
+  color:white;
+  text-align: center;
+  line-height: 3em;
+  font-family: 'Muller Narrow Extra Light';
+  font-size: 16pt;
+  font-weight: 800;
+  letter-spacing:0.5pt
 }
 
 .AnswerItem:hover {
@@ -12,9 +21,9 @@
 }
 
 .AnswerItem.success {
-  background: rgba(161, 240, 69, .7);
+  background: rgb(39, 176, 93, .7);
 }
 
 .AnswerItem.error {
-  background: rgba(240, 87, 108, .7);
+  background: rgb(181, 42, 48, .7);
 }
