@@ -7,9 +7,9 @@ import { fetchQuizes } from "../../store/actions/quiz";
 
 class QuizList extends Component {
   renderQuizes() {
-    return this.props.quizes.map(quiz => {
+    return this.props.quizes.map((quiz,index) => {
       return (
-        <NavLink to={"/quiz/" + quiz.id}>
+        <NavLink to={"/quiz/" + quiz.id} key={index}>
           <div className={classes.card} key={quiz.id}>
             <div className={classes.cardImage}>
               <img className={classes.img} src="https://clck.ru/MoKAU" alt="" />

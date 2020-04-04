@@ -35,7 +35,7 @@ class Quiz extends Component {
                 <ActiveQuiz
                   answers={this.props.quiz[this.props.activeQuestion].answers}
                   question={this.props.quiz[this.props.activeQuestion].question}
-                  image={this.props.quiz[this.props.activeQuestion].image}
+                  ImgLink={this.props.quiz[this.props.activeQuestion].ImgLink}
                   topic={this.props.quiz[this.props.activeQuestion].topic}
                   onAnswerClick={this.props.quizAnswerClick}
                   quizLength={this.props.quiz.length}
