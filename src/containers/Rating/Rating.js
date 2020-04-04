@@ -68,20 +68,20 @@ class Rating extends Component {
       <main className={classes.main}>
         <div className={classes.wrapper}>
           <h1 className={classes.title}>RATING</h1>
-          <table>
-            <thead>
+          <table className={classes.ratingTable}>
+            <thead >
               <tr>
-                <td>Место</td>
-                <td>Имя</td>
-                <td>Баллы</td>
+                <td className={classes.mainRow}>Место</td>
+                <td className={classes.mainRow}>Имя</td>
+                <td className={classes.mainRow}>Баллы</td>
               </tr>
             </thead>
             <tbody>
               {base.length > 0 &&
                 base.map((elem, index) => {
                   return (
-                    <tr key={index}>
-                      <td>{elem.place}</td>
+                    <tr className={classes.line} key={index}>
+                      <td className={classes.elem}>{elem.place}</td>
                       <td className={classes.blockIcon}>
                         <div className={classes.iconLogoBox}>
                           <img
@@ -92,7 +92,7 @@ class Rating extends Component {
                         </div>
                         {elem.name}
                       </td>
-                      <td>{elem.rating}</td>
+                      <td className={classes.elem}>{elem.rating}</td>
                     </tr>
                   );
                 })}

@@ -5,6 +5,12 @@ import Loader2 from '../../components/UI/Loader2/Loader'
 import Logo from '../../components/UI/Logo/Logo'
 // import {connect} from 'react-redux'
 class LoadingPage extends Component {
+  componentWillMount(){
+    setTimeout(()=>{
+      this.props.history.push('/auth')
+    }, 3000)
+  }
+
   render() {
     return (
       <div className={classes.main}>

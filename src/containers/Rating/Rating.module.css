@@ -17,26 +17,25 @@
   text-align: center;
   font-family: 'Muller Narrow Extra Bold';
 }
-table {
-  /* border: 1px solid black; */
+.ratingTable {
   border-collapse: collapse;
   width: 80%;
   margin: 0 auto;
 }
-thead td {
+.mainRow {
   color: #fff;
   background-color: #eff6ff3b;
   font-size: 40px;
   text-shadow: 0 0 5px black;
-  border: none
-
+  border: none;
+  text-align: center;
 }
 
-tbody tr {
+.line {
   border-bottom: 1px solid #ccc;
 }
 
-td {
+.elem {
   /* border-bottom: 1px solid #ccc; */
   border-collapse: separate;
   padding: 10px;
@@ -53,6 +52,10 @@ td {
 .blockIcon {
   display: flex;
   align-items: center;
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 0 0 5px black;
+  font-size: 25px;
 }
 
 .iconLogoImg {
