@@ -10,6 +10,7 @@
     font-family: 'Muller Narrow Extra Light';
     font-size: 14pt;
     font-weight: 500;
+    text-shadow: none;
 }
 
 .FinishedQuiz h1 {
@@ -48,11 +49,13 @@ table {
   
     color: rgb(46, 182, 53);
     font-size: 20pt;
+    text-shadow: none;
 }
 
 .error {
     color: rgba(240, 87, 108, .7);
     font-size: 20pt;
+    text-shadow: none;
 }
 
 .Status{

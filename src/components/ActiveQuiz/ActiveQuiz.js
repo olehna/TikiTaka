@@ -10,7 +10,7 @@ const ActiveQuiz = props => {
       <div style={{display:'flex', justifyContent:'space-between', alignContent:'flex-end'}}>
       <h1 className={classes.Title}>{props.topic}</h1>
       <Timer /></div>
-      <div className={classes.imgWrap}><img src={props.image} alt="" className={classes.Image}/>
+      <div className={classes.imgWrap}><img src={props.ImgLink} alt="" className={classes.Image}/>
       <small className={classes.Progress}>{props.answerNumber} / { props.quizLength }</small></div>
       <p className={classes.Question}>
       <span>

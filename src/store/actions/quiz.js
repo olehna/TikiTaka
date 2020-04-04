@@ -19,11 +19,11 @@ export function fetchQuizes() {
       Object.keys(response.data).forEach((key, index) => {
         quizes.push({
           id: key,
-          name: `Тест №${index + 1}`
+          name: `${response.data[key][0].topic}`
         })
       })
 
-      dispatch(fetchQuizesSuccess(quizes))
+      dispatch(fetchQuizesSuccess(quizes.sort((a, b) =>0.5 - Math.random()).splice(0,10)))
     } catch (e) {
       dispatch(fetchQuizesError(e))
     }
@@ -120,6 +120,7 @@ export function quizAnswerClick(answerId) {
 
     const question = state.quiz[state.activeQuestion]
     const results = state.results
+
 
     if (question.rightAnswerId === answerId) {
       if (!results[question.id]) {
