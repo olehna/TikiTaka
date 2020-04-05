@@ -15,7 +15,7 @@ const FinishedQuiz = props => {
     <div className={classes.FinishedQuiz}>
       <div>
         <h1>Игра завершена</h1>
-        <table width="100%" cellspacing="20" cellpadding="0" border="0">
+        <table className={classes.FinishTable}>
           <tbody>
             <tr>
               <th></th>

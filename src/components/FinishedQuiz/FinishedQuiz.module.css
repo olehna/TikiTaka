@@ -24,11 +24,14 @@ h1 {
  margin: 0;
 }
 
-table {
+.FinishTable {
+  width: 100%;
+  border: 0;
   margin-top: 20px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 25px;
 }
+
 .Result{
   display: flex;
   justify-content: space-evenly;
