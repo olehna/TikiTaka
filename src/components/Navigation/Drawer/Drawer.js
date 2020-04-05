@@ -45,12 +45,6 @@ class Drawer extends Component {
       links.push({to: '/logout', label: 'ВЫЙТИ', exact: false, icon: 'settings'})
     } else {
       links.push({to: '/auth', label: 'АВТОРИЗАЦИЯ', exact: false, icon: 'edit'})
-      // links.push({to: '/loading', label: 'LOADING PAGE', exact: false, icon: 'cup'})
-      // links.push({ to: '/quiz-creator', label: 'Создать тест', exact: false })
-      // links.push({ to: '/logout', label: 'Выйти', exact: false })
-      // links.push({ to: '/user', label: 'Личный кабинет', exact: false })
-      // links.push({ to: '/loading', label: 'Loading page', exact: false })
-      // links.push({to: '/quiz-creator', label: 'СОЗДАТЬ ТЕСТ', exact: false, icon: 'rating'})
     }
 
     return (
