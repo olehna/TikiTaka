@@ -23,7 +23,7 @@ export default class Profile extends Component {
                 <div className={classes.profile}>
 
                     <ProfileHeader text='профиль' />
-
+                    
                     <img className={classes.profilePic} src={'/profilepic.png'} alt='no pic' />
                     <h1 className={classes.username}>
                         {username}
