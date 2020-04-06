@@ -12,12 +12,12 @@
 
 .Question {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-radius: 5px;
   background: rgb(246, 205, 99);
   margin-top: 10px;
-  padding: 5px;
+  padding: 15px;
   height: 100px;
   text-align: center;
   font-family: 'Muller Narrow Extra Light';
@@ -25,6 +25,9 @@
   font-weight: 800;
   letter-spacing:0.5pt
   
+}
+.questText {
+  max-width: 400px;
 }
 
 .Title{
@@ -44,9 +47,10 @@
 
 .imgWrap {
   position: relative;
+  margin-top: 20px;
 }
 
-.imgWrap small {
+.imgWrap .Progress {
   position: absolute;
   right: 5px;
   text-align: center;
@@ -58,6 +62,6 @@
   background-color: rgb(255, 255, 255, 0.7);
 }
 .Image{
-  margin-top: 20px;
+  border-radius: 5px;
   width:100%;
 }
