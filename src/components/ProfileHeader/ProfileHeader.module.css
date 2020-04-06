@@ -1,33 +1,23 @@
 .profileHeader {
-    display: flex;
-    height: 15%;
-    width: 100%;
-    justify-content: space-around;
-    align-content: space-around;
-    align-items: center;
-    background-color: rgba(11, 14, 15, 0.6);
-    font-family: 'Muller Narrow Extra Light';
-    font-size: 40px;
-    border-radius: 5px;
-    /* padding-left: 30px; */
-    /* padding-right: 80px */
+  display: flex;
+  height: 15%;
+  width: 100%;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+  background-color: rgba(11, 14, 15, 0.6);
+  font-family: "Muller Narrow Extra Light";
+  font-size: 40px;
+  border-radius: 5px;
 }
 
 .pfofileName {
-    align-content: center
-    /* flex-basis: 90%; */
-    /* text-align: center; */
-    /* align-self: center; */
-    /* align-self: space; */
-    /* justify-self: center;
-    align-self: center; */
+  align-content: center;
 }
 
-.editButton{
-    max-width: 50px;
-    /* padding-right: 50px */
+.editButton {
+  max-width: 50px;
 }
-.editButton:hover{
-    opacity: 0.5;
-    /* padding-right: 50px */
+.editButton:hover {
+  opacity: 0.5;
 }

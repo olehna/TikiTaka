@@ -13,14 +13,13 @@ const FinishedQuiz = props => {
 
   return (
     <div className={classes.FinishedQuiz}>
-      <div>
-        <h1>Игра завершена</h1>
+        <h1 className={classes.gameOver}>Игра завершена</h1>
         <table className={classes.FinishTable}>
           <tbody>
-            <tr>
-              <th></th>
-              <th align='left'>Вопрос</th>
-              <th>Правильный ответ</th>
+            <tr className={classes.Row} >
+              <th className={classes.th}></th>
+              <th className={classes.th}>Вопрос</th>
+              <th className={classes.th}>Правильный ответ</th>
             </tr>
             {props.quiz.map((quizItem, index) => {
               const cls = [
@@ -32,9 +31,9 @@ const FinishedQuiz = props => {
               return (
                 <tr className={classes.Row} key={index}>
                   {/* <td><strong>{index + 1}</strong>.&nbsp;</td> */}
-                  <td style={{ width: '5%' }} ><div className={classes.Status}><i className={cls.join(' ')} /></div></td>
-                  <td style={{ width: '55%' }}>{quizItem.question}</td>
-                  <td style={{ width: '40%', textAlign: 'center' }}>{quizItem.answers[quizItem.rightAnswerId - 1].text}</td>
+                  <td className={classes.td} ><div className={classes.Status}><i className={cls.join(' ')} /></div></td>
+                  <td className={classes.td}>{quizItem.question}</td>
+                  <td className={classes.td}>{quizItem.answers[quizItem.rightAnswerId - 1].text}</td>
                 </tr>
               )
             })
@@ -43,8 +42,8 @@ const FinishedQuiz = props => {
         </table>
 
         <div className={classes.Result}>
-          <h1>Результат:</h1>
-          <div className={classes.ResultCircle}><h1 style={{ textAlign: 'center' }}>{successCount} / {props.quiz.length}</h1></div>
+          <h1 className={classes.titleResult}>Результат:</h1>
+          <div className={classes.ResultCircle}><h1 className={classes.titleResult}>{successCount} / {props.quiz.length}</h1></div>
         </div>
         <div className={classes.Buttons}>
           <button
@@ -64,7 +63,6 @@ const FinishedQuiz = props => {
               </button>
           </Link>
         </div>
-      </div>
     </div>
   )
 }
