@@ -15,7 +15,7 @@ class Quiz extends Component {
   componentWillUnmount() {
     this.props.retryQuiz()
   }
-
+   
   render() {
     return (
       <div className={classes.Quiz}>

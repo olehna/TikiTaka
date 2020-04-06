@@ -39,8 +39,8 @@ class App extends Component {
           <Route path="/quiz-creator" component={QuizCreator} />
           <Route path="/quiz/:id" component={Quiz} />
           <Route path="/logout" component={Logout} />
-          <Route path="/user/edit" component={ProfileEdit} />
-          <Route path="/user" component={Profile} />
+          <Route path="/users/edit/:id" component={ProfileEdit} />
+          <Route path="/users/:id" component={Profile} />
           <Route path="/" exact component={QuizList} />
           <Route path="/rating" exact component={Rating} />
           <Redirect to="/" />

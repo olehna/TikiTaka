@@ -31,9 +31,10 @@
     border-radius: 50%;
     margin-top: 10px;
 }
-.level{
+.userInfo{
     font-family: 'Muller Narrow Extra Light';
     font-size: 20px;
+    padding-bottom: 50%;
 }
 
 .username{
@@ -56,4 +57,15 @@
     color: red;
     text-align: left;
     padding: auto;
+}
+
+.inputChange{
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+}
+.inputChange:hover {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: text
 }

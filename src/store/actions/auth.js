@@ -1,5 +1,6 @@
 import axios from 'axios'
-import {AUTH_LOGOUT, AUTH_SUCCESS} from './actionTypes';
+import { AUTH_LOGOUT, AUTH_SUCCESS } from './actionTypes';
+import firebase from '../../firebase'
 
 export function auth(email, password, isLogin) {
   return async dispatch => {
@@ -16,12 +17,22 @@ export function auth(email, password, isLogin) {
 
     const response = await axios.post(url, authData)
     const data = response.data
-
+    console.log(data)
     const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
 
     localStorage.setItem('token', data.idToken)
     localStorage.setItem('userId', data.localId)
     localStorage.setItem('expirationDate', expirationDate)
+    const userRef = firebase
+      .firestore()
+      .collection('users')
+      .doc(data.localId)
+    userRef.get()
+      .then(doc => {
+        if (!doc.exists) {
+          userRef.set({ email: data.email })
+        }
+      })
 
     dispatch(authSuccess(data.idToken))
     dispatch(autoLogout(data.expiresIn))

@@ -8,6 +8,8 @@ class LoadingPage extends Component {
   componentWillMount(){
     setTimeout(()=>{
       this.props.history.push('/auth')
+      console.log(this.props);
+      
     }, 3000)
   }
 

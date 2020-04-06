@@ -41,7 +41,7 @@ class Drawer extends Component {
     if (this.props.isAuthenticated) {
       links.push({to: '/', label: ' ВЫБРАТЬ ТЕМУ', exact: true, icon: 'bonus'})
       links.push({to: '/rating', label: 'РЕЙТИНГ', exact: false, icon: 'rating'})
-      links.push({ to: '/user', label: 'ЛИЧНЫЙ КАБИНЕТ', exact: false, icon: 'cup' })
+      links.push({ to: `/users/${localStorage.userId}`, label: 'ЛИЧНЫЙ КАБИНЕТ', exact: false, icon: 'cup' })
       links.push({to: '/logout', label: 'ВЫЙТИ', exact: false, icon: 'settings'})
     } else {
       links.push({to: '/auth', label: 'АВТОРИЗАЦИЯ', exact: false, icon: 'edit'})

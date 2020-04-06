@@ -1,4 +1,5 @@
 import axios from '../../axios/axios-quiz'
+import firebase from '../../firebase'
 import {
   FETCH_QUIZ_SUCCESS,
   FETCH_QUIZES_ERROR,
@@ -7,6 +8,7 @@ import {
   QUIZ_SET_STATE,
   QUIZ_SET_TIMER
 } from './actionTypes'
+
 
 export function fetchQuizes() {
   return async dispatch => {
@@ -107,7 +109,7 @@ export function setTimer(second) {
 
 
 export function quizAnswerClick(answerId) {
-  
+
   return (dispatch, getState) => {
     const state = getState().quiz
 
@@ -126,11 +128,23 @@ export function quizAnswerClick(answerId) {
         results[question.id] = 'success'
       }
 
-      dispatch(quizSetState({[answerId]: 'success'}, results))
+      dispatch(quizSetState({ [answerId]: 'success' }, results))
 
       const timeout = window.setTimeout(() => {
         if (isQuizFinished(state)) {
           dispatch(finishQuiz())
+          firebase
+            .firestore()
+            .collection('users')
+            .doc(localStorage.userId)
+            .update({
+              games: firebase.firestore.FieldValue.increment(1),
+              rightAnswers: firebase
+                .firestore.FieldValue.increment(
+                  Object.values(results).filter(
+                    elem => elem === 'success').length)
+            })
+          console.log(results)
         } else {
           dispatch(quizNextQuestion(state.activeQuestion + 1))
         }
@@ -138,11 +152,22 @@ export function quizAnswerClick(answerId) {
       }, 500)
     } else {
       results[question.id] = 'error'
-      dispatch(quizSetState({[answerId]: 'error'}, results))
+      dispatch(quizSetState({ [answerId]: 'error' }, results))
 
       const timeout = window.setTimeout(() => {
         if (isQuizFinished(state)) {
           dispatch(finishQuiz())
+          firebase
+            .firestore()
+            .collection('users')
+            .doc(localStorage.userId)
+            .update({
+              games: firebase.firestore.FieldValue.increment(1),
+              rightAnswers: firebase
+                .firestore.FieldValue.increment(
+                  Object.values(results).filter(
+                    elem => elem === 'success').length)
+            })
         } else {
           dispatch(quizNextQuestion(state.activeQuestion + 1))
         }
