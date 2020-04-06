@@ -23,9 +23,19 @@ export function fetchQuizes() {
         })
       })
 
-      dispatch(fetchQuizesSuccess(quizes.sort((a, b) =>0.5 - Math.random()).splice(0,10)))
+      let uniqueTopics = () => {
+        let passedVals = [];
+        const newArr = quizes
+          .sort(() => Math.random() - 0.5)
+          .filter(
+            (el) => !passedVals.includes(el.name) && passedVals.push(el.name)
+          );
+        return newArr;
+      };
+
+      dispatch(fetchQuizesSuccess(uniqueTopics()));
     } catch (e) {
-      dispatch(fetchQuizesError(e))
+      dispatch(fetchQuizesError(e));
     }
   }
 }

@@ -1,37 +1,82 @@
 .QuizList {
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-    flex-grow: 1;
-    width: 100%;
-    background: -webkit-linear-gradient(-39.81deg, rgba(117,188,172,1) 0, rgba(0,0,0,0) 59%, rgba(0,0,0,0) 100%), -webkit-linear-gradient(-135deg, rgba(230,62,97) 0, rgba(0,0,0,0) 100%), -webkit-linear-gradient(45deg, rgba(227,202,118,1) 0, rgba(0,0,0,0) 39%, rgba(0,0,0,0) 100%), -webkit-linear-gradient(-225deg, rgba(0,126,157,1) 0, rgba(0,126,157,0.31) 41%, rgba(0,0,0,0) 75%, rgba(0,0,0,0) 100%), rgb(255,255,255);
-    background: -moz-linear-gradient(129.81deg, rgba(117,188,172,1) 0, rgba(0,0,0,0) 59%, rgba(0,0,0,0) 100%), -moz-linear-gradient(225deg, rgba(230,62,97) 0, rgba(0,0,0,0) 100%), -moz-linear-gradient(45deg, rgba(227,202,118,1) 0, rgba(0,0,0,0) 39%, rgba(0,0,0,0) 100%), -moz-linear-gradient(315deg, rgba(0,126,157,1) 0, rgba(0,126,157,0.31) 41%, rgba(0,0,0,0) 75%, rgba(0,0,0,0) 100%), rgb(255,255,255);
-    background: linear-gradient(129.81deg, rgba(117,188,172,1) 0, rgba(0,0,0,0) 59%, rgba(0,0,0,0) 100%), linear-gradient(225deg, rgba(230,62,97) 0, rgba(0,0,0,0) 100%), linear-gradient(45deg, rgba(227,202,118,1) 0, rgba(0,0,0,0) 39%, rgba(0,0,0,0) 100%), linear-gradient(315deg, rgba(0,126,157,1) 0, rgba(0,126,157,0.31) 41%, rgba(0,0,0,0) 75%, rgba(0,0,0,0) 100%), rgb(255,255,255);
-    background-position: 50% 50%;
-    -webkit-background-origin: padding-box;
-    background-origin: padding-box;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-background-size: auto auto;
-    background-size: auto auto;
-}
-
-.QuizList h1 {
-    color: #fff;
-    font-family: 'Muller Narrow Extra Bold';
-    font-size: 50px;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  flex-grow: 1;
+  width: 100%;
+  background: -webkit-linear-gradient(
+      -39.81deg,
+      rgba(117, 188, 172, 1) 0,
+      rgba(0, 0, 0, 0) 59%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    -webkit-linear-gradient(-135deg, rgba(230, 62, 97) 0, rgba(0, 0, 0, 0) 100%),
+    -webkit-linear-gradient(45deg, rgba(227, 202, 118, 1) 0, rgba(0, 0, 0, 0)
+          39%, rgba(0, 0, 0, 0) 100%),
+    -webkit-linear-gradient(-225deg, rgba(0, 126, 157, 1) 0, rgba(
+            0,
+            126,
+            157,
+            0.31
+          )
+          41%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%),
+    rgb(255, 255, 255);
+  background: -moz-linear-gradient(
+      129.81deg,
+      rgba(117, 188, 172, 1) 0,
+      rgba(0, 0, 0, 0) 59%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    -moz-linear-gradient(225deg, rgba(230, 62, 97) 0, rgba(0, 0, 0, 0) 100%),
+    -moz-linear-gradient(45deg, rgba(227, 202, 118, 1) 0, rgba(0, 0, 0, 0) 39%, rgba(
+            0,
+            0,
+            0,
+            0
+          )
+          100%),
+    -moz-linear-gradient(315deg, rgba(0, 126, 157, 1) 0, rgba(0, 126, 157, 0.31)
+          41%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%),
+    rgb(255, 255, 255);
+  background: linear-gradient(
+      129.81deg,
+      rgba(117, 188, 172, 1) 0,
+      rgba(0, 0, 0, 0) 59%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(225deg, rgba(230, 62, 97) 0, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(
+      45deg,
+      rgba(227, 202, 118, 1) 0,
+      rgba(0, 0, 0, 0) 39%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      315deg,
+      rgba(0, 126, 157, 1) 0,
+      rgba(0, 126, 157, 0.31) 41%,
+      rgba(0, 0, 0, 0) 75%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    rgb(255, 255, 255);
+  background-position: 50% 50%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
 }
 
 .cardTitle {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
   background-color: #3672bf8c;
   backdrop-filter: blur(30px);
   width: 100%;
   font-weight: bold;
-
 }
-.cardList a {
+.link {
   text-decoration: none;
 }
 
@@ -45,7 +90,7 @@
   border-radius: 10px;
   text-align: center;
   font-size: 32px;
-  transition: all .4s;
+  transition: all 0.4s;
   cursor: pointer;
   margin-bottom: 20px;
   display: flex;
@@ -60,7 +105,9 @@
 .title {
   text-align: center;
   margin-bottom: 40px;
-
+  color: #fff;
+  font-family: "Muller Narrow Extra Bold";
+  font-size: 40px;
 }
 
 .cardList {
@@ -77,5 +124,17 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  max-width: 540px;
+  max-width: 1080px;
+}
+
+@media (min-width: 900px,max-width:1079px) {
+  .cardWrap {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 900px) {
+  .cardWrap {
+    max-width: 480px;
+  }
 }

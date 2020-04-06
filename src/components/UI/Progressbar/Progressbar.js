@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import classes from './Progressbar.module.css'
+import classes from "./Progressbar.module.css";
 
 export default class Progressbar extends Component {
-  render () {
+  render() {
     return (
-        <div className={classes.meter}>
-        <span style={{width: this.props.width}}><span className={classes.progress}></span></span>
-    </div>
-    )
+      <div className={classes.meter}>
+        <span style={{ width: this.props.width }}>
+          <span className={classes.progress}></span>
+        </span>
+      </div>
+    );
   }
 }

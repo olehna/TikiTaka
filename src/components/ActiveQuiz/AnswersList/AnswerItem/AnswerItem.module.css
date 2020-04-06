@@ -11,14 +11,15 @@
   text-align: center;
   line-height: 3em;
   font-family: 'Muller Narrow Extra Light';
-  font-size: 16pt;
+  /* font-size: 16pt; */
   font-weight: 800;
   letter-spacing:0.5pt
 }
 
 .AnswerItem:hover {
   background: rgba(255, 255, 255, .2);
-  transition: background .3s ease-in-out;
+  transition: all .4s ;
+  transform: scale(1.03);
 }
 
 .AnswerItem.success {
