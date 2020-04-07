@@ -1,14 +1,15 @@
 .profileHeader {
   display: flex;
-  height: 15%;
-  width: 100%;
+  padding: 0 10px;
   justify-content: space-around;
   align-content: space-around;
   align-items: center;
-  background-color: rgba(11, 14, 15, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
   font-family: "Muller Narrow Extra Light";
-  font-size: 40px;
+  font-size: 36px;
   border-radius: 5px;
+  position: relative;
+  margin: 25px 0;
 }
 
 .pfofileName {
@@ -16,8 +17,26 @@
 }
 
 .editButton {
-  max-width: 50px;
+  max-width: 20px;
+  position: absolute;
+  top: -30px;
+  right: -11px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.editPicture {
+  width: 100%;
 }
 .editButton:hover {
-  opacity: 0.5;
+  transform: scale(1.5);
+}
+
+@media (max-width: 321px) {
+  .profileHeader {
+    font-size: 18px;
+  }
+  .editButton {
+    top: -10px;
+  }
 }

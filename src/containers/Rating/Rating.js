@@ -1,6 +1,7 @@
 import React, { useState, useEffect  } from "react";
-import classes from "./Rating.module.css";
 import firebase from '../../firebase'
+import Loader from '../../components/UI/Loader2/Loader'
+import classes from "./Rating.module.css";
 
 function useUsers() {
   const [users, setUsers] = useState([])
@@ -11,7 +12,6 @@ function useUsers() {
       .collection("users")
       .orderBy("rightAnswers", "desc")
       .onSnapshot((snapshot) => {
-        // debugger
         const newTest = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data()
@@ -25,17 +25,17 @@ function useUsers() {
 
 const Rating = () => {
   const base = useUsers()
-
+  
   return (
     <main className={classes.main}>
       <div className={classes.wrapper}>
         <h1 className={classes.title}>ТАБЛИЦА РЕЗУЛЬТАТОВ</h1>
-        <table>
+        <table className={classes.tableRating}>
           <thead>
-            <tr>
-              <td>РЕЙТИНГ</td>
-              <td>Имя</td>
-              <td>ИГРЫ</td>
+            <tr className={classes.rowThead}>
+              <td className={classes.tdHead}>РЕЙТИНГ</td>
+              <td className={classes.tdHead}>ИМЯ</td>
+              <td className={classes.tdHead}>ИГРЫ</td>
             </tr>
           </thead>
           <tbody>
@@ -43,18 +43,18 @@ const Rating = () => {
               base.map((elem, index) => {
                 return (
                   <tr key={index}>
-                    <td>{elem.rightAnswers}</td>
-                    <td className={classes.blockIcon}>
+                    <td className={classes.tdBody}><div className={classes.round}>{elem.rightAnswers}</div></td>
+                    <td className={classes.tdBody}>
                       <div className={classes.iconLogoBox}>
-                        <img
+                        {/* <img
                           className={classes.iconLogoImg}
                           src={elem.photo}
                           alt=""
-                        />
+                        /> */}
                       </div>
                       {elem.userName ? elem.userName : (elem.firstName || elem.email)}
                     </td>
-                    <td>{elem.games}</td>
+                    <td className={classes.tdBody} >{elem.games}</td>
                   </tr>
                 );
               })}

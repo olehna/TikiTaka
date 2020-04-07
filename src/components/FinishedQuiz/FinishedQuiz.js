@@ -14,10 +14,11 @@ const FinishedQuiz = props => {
   return (
     <div className={classes.FinishedQuiz}>
         <h1 className={classes.gameOver}>Игра завершена</h1>
+        <div className={classes.tableWrap}>
         <table className={classes.FinishTable}>
           <tbody>
             <tr className={classes.Row} >
-              <th className={classes.th}></th>
+              <th className={classes.th}>Ваш выбор</th>
               <th className={classes.th}>Вопрос</th>
               <th className={classes.th}>Правильный ответ</th>
             </tr>
@@ -41,6 +42,7 @@ const FinishedQuiz = props => {
           </tbody>
         </table>
 
+        </div>
         <div className={classes.Result}>
           <h1 className={classes.titleResult}>Результат:</h1>
           <div className={classes.ResultCircle}><h1 className={classes.titleResult}>{successCount} / {props.quiz.length}</h1></div>

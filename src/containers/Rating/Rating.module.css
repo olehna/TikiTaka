@@ -20,29 +20,20 @@
       rgba(0, 0, 0, 0) 100%
     ),
     rgb(255, 255, 255);
-    flex-grow: 1;
+  flex-grow: 1;
 }
 .wrapper {
-  margin-top: 60px;
+  margin-top: 90px;
   display: flex;
   flex-direction: column;
 }
 
 .title {
-  position: fixed;
   width: 100%;
   color: #fff;
   font-size: 50px;
   text-align: center;
   font-family: "Muller Narrow Extra Bold";
-}
-.ratingTable {
-  border-collapse: collapse;
-  width: 80%;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  margin-top: 100px;
 }
 .mainRow {
   color: #fff;
@@ -51,13 +42,8 @@
   border: none;
   text-align: center;
 }
-/* 
-.line {
-  border-bottom: 1px solid #ccc;
-} */
 
 .elem {
-  border-collapse: separate;
   padding: 10px;
   font-size: 25px;
   text-align: center;
@@ -70,17 +56,55 @@
   margin-right: 10px;
 }
 .blockIcon {
-  display: flex;
-  align-items: center;
   color: #fff;
   font-weight: 900;
-  text-shadow: 0 0 5px black;
-  font-size: 25px;
+  font-size: 15px;
 }
 
-.iconLogoImg {
-  width: 100%;
+.rowThead {
+  text-align: center;
+}
+.tableRating {
+  min-width: 430px;
+  border-collapse: collapse;
+  margin: 40px auto;
+  color: #fff;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.tdHead {
+  padding: 10px;
+  font-family: "Muller Narrow Extra Bold";
+}
+
+.tdBody {
+  border-top: 1px solid #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.round {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1px solid #fff;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .tableRating {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 321px) {
+  .tableRating {
+    min-width: 300px;
+  }
+  .title {
+    font-size: 32px;
+  }
 }
