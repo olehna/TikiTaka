@@ -1,45 +1,26 @@
-import React, {Component} from 'react'
-import classes from './LoadingPage.module.css'
-// import Loader from '../../components/UI/Loader/Loader'
-import Loader2 from '../../components/UI/Loader2/Loader'
-import Logo from '../../components/UI/Logo/Logo'
-// import {connect} from 'react-redux'
-class LoadingPage extends Component {
-  componentWillMount(){
-    setTimeout(()=>{
-      this.props.history.push('/auth')
-      console.log(this.props);
-      
-    }, 3000)
+import React, { Component } from "react";
+import classes from "./LoadingPage.module.css";
+import Loader2 from "../../components/UI/Loader2/Loader";
+import Logo from "../../components/UI/Logo/Logo";
+export default class LoadingPage extends Component {
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.history.push("/auth");
+    }, 3000);
   }
 
   render() {
     return (
       <div className={classes.main}>
-          <Logo />
-          <h1 className={classes.AppTitle}>тики<br/>така</h1>
-          <h3 className={classes.AppSubTitle}>интеллектуальные турниры</h3>
-          {
-            // this.props.loading ?
-              //  <Loader />
-               <Loader2 />
-              // : <div>Вроде как должен быть спиннер</div>
-          }
+        <Logo />
+        <h1 className={classes.AppTitle}>
+          тики
+          <br />
+          така
+        </h1>
+        <h3 className={classes.AppSubTitle}>интеллектуальные турниры</h3>
+        {<Loader2 />}
       </div>
-    )
+    );
   }
 }
-
-// function mapStateToProps(state) {
-//   return {
-//     loading: state.quiz.loading
-//   }
-// }
-
-// function mapDispatchToProps(dispatch) {
-//   return {
-    
-//   }
-// }
-export default LoadingPage
-// export default connect(mapStateToProps, mapDispatchToProps)(LoadingPage)

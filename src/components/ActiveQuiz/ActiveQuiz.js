@@ -1,23 +1,29 @@
-import React from 'react'
-import classes from './ActiveQuiz.module.css'
-import AnswersList from './AnswersList/AnswersList'
-import Timer from '../UI/Timer/Timer'
+import React from "react";
+import classes from "./ActiveQuiz.module.css";
+import AnswersList from "./AnswersList/AnswersList";
+import Timer from "../UI/Timer/Timer";
 
-
-const ActiveQuiz = props => {
+const ActiveQuiz = (props) => {
   return (
     <div className={classes.ActiveQuiz}>
-      <div style={{display:'flex', justifyContent:'space-between', alignContent:'flex-end'}}>
-      <h1 className={classes.Title}>{props.topic}</h1>
-      <Timer /></div>
-      <div className={classes.imgWrap}><img src={props.image} alt="" className={classes.Image}/>
-      <small className={classes.Progress}>{props.answerNumber} / { props.quizLength }</small></div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignContent: "flex-end",
+        }}
+      >
+        <h1 className={classes.Title}>{props.topic}</h1>
+        <Timer />
+      </div>
+      <div className={classes.imgWrap}>
+        <img src={props.ImgLink} alt="" className={classes.Image} />
+        <small className={classes.Progress}>
+          {props.answerNumber} / {props.quizLength}
+        </small>
+      </div>
       <p className={classes.Question}>
-      <span>
-        {props.question}
-      </span>
-
-        
+        <span className={classes.questText}>{props.question}</span>
       </p>
 
       <AnswersList
@@ -26,7 +32,7 @@ const ActiveQuiz = props => {
         onAnswerClick={props.onAnswerClick}
       />
     </div>
-  )
-}
+  );
+};
 
-export default ActiveQuiz
+export default ActiveQuiz;
