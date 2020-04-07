@@ -10,7 +10,7 @@ export default class ProfileHeader extends Component {
             <div className={classes.profileHeader}>
                 <div></div>
                 <div className={classes.pfofileName}>{this.props.text}</div>
-                <Link to="/user/edit">
+                <Link to={`/user/edit/${localStorage.userId}`}>
                     <img className={classes.editButton}
                         src={'/pencil_edit.png'} alt='no pic' />
                 </Link>

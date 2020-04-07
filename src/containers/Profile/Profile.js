@@ -1,55 +1,55 @@
-import React, { Component } from "react";
-// import { Redirect } from 'react-router'
-// import { Link } from 'react-router-dom'
-// import Button from '../../components/UI/Button/Button'
-import classes from "./Profile.module.css";
-import Progressbar from "../../components/UI/Progressbar/Progressbar";
-import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
+import React, { useState, useEffect } from 'react'
+import firebase from '../../firebase'
+import classes from './Profile.module.css'
+import Progressbar from '../../components/UI/Progressbar/Progressbar'
+import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
 
-export default class Profile extends Component {
-  state = {
-    username: "Алешка П.",
-    level: 1,
-    wins: 14,
-    defeats: 88,
-  };
+function useUsers() {
+    const [users, setUsers] = useState([])
 
-  render() {
-    const username = this.state.username;
-    const level = this.state.level;
-    const width =
-      (100 * this.state.wins) / (this.state.wins + this.state.defeats);
-    return (
-      <div className={classes.wrapper}>
-        <div className={classes.profile}>
-          <ProfileHeader text="профиль" />
-
-          <img
-            className={classes.profilePic}
-            src={"/profilepic.png"}
-            alt="no pic"
-          />
-          <h1 className={classes.username}>{username}</h1>
-
-          <h2 className={classes.level}>{level} уровень</h2>
-
-          <div className={classes.results}>
-            <Progressbar width={`${width}%`} />
-            <div className={classes.resultNumbers}>
-              <p className={classes.win}>
-                ПОБЕДЫ
-                <br />
-                <span className={classes.span}>{this.state.wins}</span>
-              </p>
-              <p className={classes.win}>
-                ПОРАЖЕНИЯ
-                <br />
-                <span className={classes.span}>{this.state.defeats}</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+    useEffect(() => {
+        const userRef = firebase.firestore().collection('users').doc(localStorage.userId)
+        userRef.get().then(function (documentSnapshot) {
+            if (documentSnapshot.exists) {
+                const data = documentSnapshot.data()
+                setUsers(data)
+            } else {
+                console.log('document not found');
+            }
+        })
+    }, []);
+    return users
 }
+
+const Profile = () => {
+    const user = useUsers()
+
+    const wrongAnswers = user.games * 10 - user.rightAnswers
+    const width =  user.rightAnswers / user.games * 10
+
+    return (
+
+        <div className={classes.wrapper}>
+            <div className={classes.profile}>
+
+                <ProfileHeader text={user.userName} />
+                <div className={classes.userInfo}>
+                    <h2 className={classes.userName}>  Имя: {user.firstName}  </h2>
+                    <h2 className={classes.userName}>  Фамилия: {user.lastName} </h2>
+                </div>
+                <div className={classes.results}>
+                    <h3 className={classes.level}>
+                        {user.games} игр сыграно
+                    </h3>
+                    <Progressbar width={`${width}%`} />
+                    <div className={classes.resultNumbers}>
+                        <p>ПРАВИЛЬНЫХ ОТВЕТОВ<br /><span>{user.rightAnswers || 0}</span></p>
+                        <p>НЕПРАВИЛЬНЫХ ОТВЕТОВ<br /><span>{wrongAnswers|| 0}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+
+}
+export default Profile

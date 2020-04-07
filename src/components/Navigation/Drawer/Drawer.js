@@ -14,7 +14,7 @@ const links = [{
   exact: false,
   icon: "rating",
 }, {
-  to: "/user",
+  to: `/user/${localStorage.userId}`,
   label: "ЛИЧНЫЙ КАБИНЕТ",
   exact: false,
   icon: "user",
