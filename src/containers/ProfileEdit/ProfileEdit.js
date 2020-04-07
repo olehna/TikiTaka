@@ -37,20 +37,21 @@ const ProfileEdit = () => {
 
     return (
         <div className={classes.wrapper}>
+          <div className={classes.mainBlock}>
             <ProfileHeader text={userName} />
-            <div className={classes.userInfo}>
-                <div className={classes.userName}>  Имя:
-                <input className={classes.inputChange} value={firstName} onChange={e => setName(e.currentTarget.value)} />
-                </div>
-                <div className={classes.userName}>  Фамилия:
-                <input className={classes.inputChange} value={lastName} onChange={e => setLastName(e.currentTarget.value)} />
-                </div>
-                <div className={classes.userName}>  Ник:
-                <input className={classes.inputChange} value={userName} onChange={e => setUserName(e.currentTarget.value)} />
-                </div>
-            </div>
-            <Button onClick={onSubmit}>change</Button>
-
+              <div className={classes.userInfo}>
+                  <div className={classes.userName}>  Имя:
+                  <input className={classes.inputChange} placeholder={firstName}  onChange={e => setName(e.currentTarget.value)} />
+                  </div>
+                  <div className={classes.userName}>  Фамилия:
+                  <input className={classes.inputChange} placeholder={lastName} onChange={e => setLastName(e.currentTarget.value)} />
+                  </div>
+                  <div className={classes.userName}>  Ник:
+                  <input className={classes.inputChange} placeholder={userName} onChange={e => setUserName(e.currentTarget.value)} />
+                  </div>
+              </div>
+              <Button onClick={onSubmit}>Изменить</Button>
+          </div>
         </div>
     )
 }

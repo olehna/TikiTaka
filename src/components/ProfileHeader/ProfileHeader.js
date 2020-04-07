@@ -8,10 +8,9 @@ export default class ProfileHeader extends Component {
     render() {
         return (
             <div className={classes.profileHeader}>
-                <div></div>
-                <div className={classes.pfofileName}>{this.props.text}</div>
-                <Link to={`/user/edit/${localStorage.userId}`}>
-                    <img className={classes.editButton}
+                <h1 className={classes.pfofileName}>{this.props.text}</h1>
+                <Link className={classes.editButton} to={`/user/edit/${localStorage.userId}`}>
+                    <img className={classes.editPicture}
                         src={'/pencil_edit.png'} alt='no pic' />
                 </Link>
             </div>

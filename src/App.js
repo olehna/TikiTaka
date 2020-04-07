@@ -25,8 +25,8 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route path="/auth" component={Auth} />
-        <Route path="/" exact component={LoadingPage} />
-        {/* <Redirect to="/" /> */}
+        <Route path="/loading" exact component={LoadingPage} />
+        <Redirect to="/loading" />
       </Switch>
     )
 
