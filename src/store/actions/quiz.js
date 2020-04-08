@@ -10,6 +10,7 @@ import {
   QUIZ_RETRY,
   QUIZ_SET_STATE,
   QUIZ_SET_TIMER,
+  QUIZ_DECR_TIMER,
 } from './actionTypes';
 
 
@@ -114,12 +115,18 @@ export function retryQuiz() {
   };
 }
 
-export function setTimer(second) {
+export function decSecondsAC() {
   return {
-    type: QUIZ_SET_TIMER,
-    second,
+    type: QUIZ_DECR_TIMER,
   };
 }
+
+// export function setTimer(second) {
+//   return {
+//     type: QUIZ_SET_TIMER,
+//     second,
+//   };
+// }
 
 export function quizAnswerClick(answerId) {
   return (dispatch, getState) => {
@@ -161,7 +168,7 @@ export function quizAnswerClick(answerId) {
           dispatch(quizNextQuestion(state.activeQuestion + 1));
         }
         window.clearTimeout(timeout);
-      }, 500);
+      }, 1000);
     } else {
       results[question.id] = 'error'
       dispatch(quizSetState({ [answerId]: 'error' }, results))

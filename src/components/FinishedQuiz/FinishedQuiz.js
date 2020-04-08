@@ -48,13 +48,15 @@ const FinishedQuiz = props => {
           <div className={classes.ResultCircle}><h1 className={classes.titleResult}>{successCount} / {props.quiz.length}</h1></div>
         </div>
         <div className={classes.Buttons}>
+        <Link to="/rating">
           <button
             className={classes.Button}
             style={{ background: 'rgb(255, 93, 125)' }}
-            onClick={props.onRetry}
+            // onClick={props.onRetry}
             type="primary" >
-            Повторить
+            Рейтинг
             </button>
+        </Link>
 
           <Link to="/">
             <button

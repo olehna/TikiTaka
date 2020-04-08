@@ -26,6 +26,7 @@ class App extends Component {
       <Switch>
         <Route path="/auth" component={Auth} />
         <Route path="/loading" exact component={LoadingPage} />
+        
         <Redirect to="/loading" />
       </Switch>
     )
