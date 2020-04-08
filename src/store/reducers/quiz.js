@@ -4,7 +4,8 @@ import {
   FETCH_QUIZES_START,
   FETCH_QUIZES_SUCCESS, FINISH_QUIZ, QUIZ_NEXT_QUESTION, QUIZ_RETRY,
   QUIZ_SET_STATE,
-  QUIZ_SET_TIMER
+  QUIZ_SET_TIMER,
+  QUIZ_DECR_TIMER ,
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -16,7 +17,8 @@ const initialState = {
   activeQuestion: 0,
   answerState: null,
   quiz: null,
-  seconds: 15
+  seconds: 15,
+  start: 15,
 }
 
 export default function quizReducer(state = initialState, action) {
@@ -39,7 +41,7 @@ export default function quizReducer(state = initialState, action) {
       }
     case QUIZ_SET_STATE:
       return {
-        ...state, answerState: action.answerState, results: action.results
+        ...state, answerState: action.answerState, results: action.results, seconds: state.start
       }
     case FINISH_QUIZ:
       return {
@@ -57,11 +59,17 @@ export default function quizReducer(state = initialState, action) {
         isFinished: false,
         results: {}
       }
-    case QUIZ_SET_TIMER:
+    // case QUIZ_SET_TIMER:
+    //   return {
+    //     ...state, 
+    //     seconds: action.second -1,
+    //   }
+    case QUIZ_DECR_TIMER:
       return {
-        ...state, 
-        seconds: action.second -5,
+        ...state,
+        seconds: state.seconds - 1,
       }
+      
     default:
       return state
   }

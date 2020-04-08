@@ -1,26 +1,54 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { decSecondsAC, quizAnswerClick } from '../../../store/actions/quiz'
 import classes from './Timer.module.css'
 
-export default class Timer extends Component {
-  state = {
-    seconds: 15,
-  }
+
+class Timer extends Component {
+
+
+  // state = {
+  //   seconds: 15,
+  // }
+
   componentDidMount() {
-    this.myInterval = setInterval(() => {
-        const { seconds } = this.state
+    setTimeout(() => {
+      
+      this.myInterval = setInterval(() => {
+        const { seconds, decSeconds, nextQuestion } = this.props
+        console.log(seconds)
         if (seconds > 0) {
-            this.setState(({ seconds }) => ({
-                seconds: seconds - 1
-            }))
-        }
-    }, 1000)
+            decSeconds()
+          } else {
+            nextQuestion()
+            // clearInterval(this.myInterval)
+          }
+      }, 1000)
+    }, 2000)
 }
   render() {
-    const { seconds } = this.state
+    const { seconds } = this.props
     return(
       <div className={classes.Timer}>
-          { seconds < 10 ? `0${seconds}` : seconds }
+          {seconds}
+          {/* { seconds < 10 ? `0${seconds}` : seconds } */}
       </div>
     )
   }
 }
+
+
+const mapStateToProps = (store) => {
+  return {
+    seconds: store.quiz.seconds,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    decSeconds: () => dispatch(decSecondsAC()),
+    nextQuestion: () => dispatch(quizAnswerClick())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Timer)
