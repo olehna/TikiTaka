@@ -85,8 +85,10 @@ const fairRating = (el) => {
   }
   return Math.round((el.rightAnswers*coef))
 }
+
 function useUsers() {
-  const [users, setUsers] = useState([])
+  const [users, setUsers,] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const unsubscribe = firebase
@@ -102,11 +104,12 @@ function useUsers() {
         })).sort((a,b) => fairRating(b) - fairRating(a))
                 
         setUsers(newTest)
+        setLoading(false)
       })
       return () => unsubscribe()
   }, [])
     
-  return users
+  return {base: users, loading}
 }
 
 
@@ -114,13 +117,16 @@ function useUsers() {
 
 
 const Rating = () => {
-  const base = useUsers()
+  const {base, loading} = useUsers()
   
   return (
     <main className={classes.main}>
       <div className={classes.wrapper}>
         <h1 className={classes.title}>ТАБЛИЦА РЕЗУЛЬТАТОВ</h1>
-        <table className={classes.tableRating}>
+        {loading ? (
+          <Loader />
+        ): (
+          <table className={classes.tableRating}>
           <thead>
             <tr className={classes.rowThead}>
               <td className={classes.tdHead}>РЕЙТИНГ</td>
@@ -151,6 +157,8 @@ const Rating = () => {
               })}
           </tbody>
         </table>
+        )}
+        
       </div>
     </main>
   );

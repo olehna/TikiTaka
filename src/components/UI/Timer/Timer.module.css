@@ -10,3 +10,11 @@
   columns: #b2b2b2;
   align-self: top;
 }
+.timeOut {
+  padding: 20px;
+  background: rgb(246, 205, 99);
+  border: none;
+  text-align: center;
+  font-family: 'Muller Narrow Extra Bold';
+  border-radius: 10px;
+}

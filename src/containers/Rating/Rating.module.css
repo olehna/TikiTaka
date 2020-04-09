@@ -23,7 +23,7 @@
   flex-grow: 1;
 }
 .wrapper {
-  margin-top: 90px;
+  /* margin-top: 90px; */
   display: flex;
   flex-direction: column;
 }
@@ -34,6 +34,8 @@
   font-size: 50px;
   text-align: center;
   font-family: "Muller Narrow Extra Bold";
+  position: fixed;
+  background: rgba(0,0,0,.5);
 }
 .mainRow {
   color: #fff;
@@ -67,10 +69,11 @@
 .tableRating {
   min-width: 430px;
   border-collapse: collapse;
-  margin: 40px auto;
+  margin: 140px auto;
   color: #fff;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.3);
+  
 }
 .tdHead {
   padding: 10px;
@@ -95,6 +98,12 @@
 }
 
 @media (min-width: 900px) {
+  .title {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .tableRating {
     min-width: 600px;
   }
