@@ -9,7 +9,6 @@ import {
   QUIZ_NEXT_QUESTION,
   QUIZ_RETRY,
   QUIZ_SET_STATE,
-  // QUIZ_SET_TIMER,
   QUIZ_DECR_TIMER,
   QUIZ_SHOW_LOADER,
   QUIZ_HIDE_LOADER,
@@ -140,13 +139,6 @@ export function resetTimer() {
     type: QUIZ_RESET_TIMER,
   };
 }
-
-// export function setTimer(second) {
-//   return {
-//     type: QUIZ_SET_TIMER,
-//     second,
-//   };
-// }
 
 export function quizAnswerClick(answerId) {
   return (dispatch, getState) => {

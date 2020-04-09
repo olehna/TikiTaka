@@ -7,7 +7,6 @@ import {
   QUIZ_NEXT_QUESTION,
   QUIZ_RETRY,
   QUIZ_SET_STATE,
-  // QUIZ_SET_TIMER,
   QUIZ_DECR_TIMER,
   QUIZ_SHOW_LOADER,
   QUIZ_HIDE_LOADER,
@@ -77,11 +76,6 @@ export default function quizReducer(state = initialState, action) {
         isFinished: false,
         results: {},
       };
-    // case QUIZ_SET_TIMER:
-    //   return {
-    //     ...state,
-    //     seconds: action.second -1,
-    //   }
     case QUIZ_DECR_TIMER:
       return {
         ...state,

@@ -8,9 +8,6 @@ import {
 import classes from "./Timer.module.css";
 
 class Timer extends Component {
-  // state = {
-  //   seconds: 15,
-  // }
 
   componentDidMount() {
     this.props.resetTimerToStart();
