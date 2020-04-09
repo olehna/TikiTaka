@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import classes from "./Drawer.module.css";
 import { NavLink } from "react-router-dom";
 import Backdrop from "../../UI/Backdrop/Backdrop";
-
+import firebase from "../../../firebase";
 const links = [{
   to: "/",
   label: " ВЫБРАТЬ ТЕМУ",
@@ -24,16 +24,31 @@ const links = [{
   exact: false,
   icon: "logout",
 }];
-
-class Drawer extends Component {
-
-
-  clickHandler = () => {
-    this.props.onClose();
+function useUsers() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const userRef = firebase
+      .firestore()
+      .collection("users")
+      .doc(localStorage.userId);
+    userRef.get().then(function (documentSnapshot) {
+      if (documentSnapshot.exists) {
+        const data = documentSnapshot.data();
+        setUsers(data);
+      } else {
+        console.log("document not found");
+      }
+    });
+  }, []);
+  return users;
+}
+function Drawer (props) {
+  const user = useUsers();
+  const clickHandler = () => {
+    props.onClose();
   };
-
-  renderLinks(links) {
-    return links.map((link, index) => {
+ const renderLinks = (links) => {
+    return links.map((link, index) => {      
       return (
         <li 
         className={classes.itemListing} 
@@ -43,7 +58,7 @@ class Drawer extends Component {
             to={link.to}
             exact={link.exact}
             activeClassName={classes.active}
-            onClick={this.clickHandler}
+            onClick={clickHandler}
           >
             {link.icon && (
               <img
@@ -58,30 +73,23 @@ class Drawer extends Component {
       );
     });
   }
-
-  render() {
     const cls = [classes.Drawer];
-
-    if (!this.props.isOpen) {
+    if (!props.isOpen) {
       cls.push(classes.close);
     }
-
-    
-
     return (
       <>
         <nav className={cls.join(" ")}>
-          {this.props.isAuthenticated ? (
+          {props.isAuthenticated ? (
             <ul className={classes.listing}>
-              <div onClick={this.onProfilePic} className={classes.boxLogo}>
-                <img src={"/ava.png"} alt="" className={classes.Ava} />
+              <div className={classes.boxLogo}>
+                <img src={"/img/logo.png"} alt="" className={classes.Ava} />
               </div>
-              <div className={classes.userName}>Алёша Панин</div>
+          <div className={classes.userName}>{user.userName}</div>
             </ul>
           ) : null}
-
           <ul className={classes.listing} >
-            {this.renderLinks(links)}
+            {renderLinks(links)}
           </ul>
           <a href="./" className={classes.mail}>
             <img
@@ -92,10 +100,8 @@ class Drawer extends Component {
             Связаться с нами
           </a>
         </nav>
-        {this.props.isOpen ? <Backdrop onClick={this.props.onClose} /> : null}
+        {props.isOpen ? <Backdrop onClick={props.onClose} /> : null}
       </>
     );
-  }
 }
-
 export default Drawer;
