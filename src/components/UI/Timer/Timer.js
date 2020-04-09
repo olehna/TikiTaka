@@ -1,54 +1,61 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { decSecondsAC, quizAnswerClick } from '../../../store/actions/quiz'
-import classes from './Timer.module.css'
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import {
+  decSecondsAC,
+  quizAnswerClick,
+  resetTimer,
+} from "../../../store/actions/quiz";
+import classes from "./Timer.module.css";
 
 class Timer extends Component {
-
-
   // state = {
   //   seconds: 15,
   // }
 
   componentDidMount() {
-    setTimeout(() => {
-      
-      this.myInterval = setInterval(() => {
-        const { seconds, decSeconds, nextQuestion } = this.props
-        console.log(seconds)
-        if (seconds > 0) {
-            decSeconds()
-          } else {
-            nextQuestion()
-            // clearInterval(this.myInterval)
-          }
-      }, 1000)
-    }, 2000)
-}
+    this.props.resetTimerToStart();
+    this.myInterval = setInterval(() => {
+      const { seconds, decSeconds, nextQuestion } = this.props;
+      console.log(seconds);
+      if (seconds > 0) {
+        decSeconds();
+      } else if (seconds === 0) {
+        nextQuestion();
+      }
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.myInterval);
+  }
+
   render() {
-    const { seconds } = this.props
-    return(
+    const { seconds } = this.props;
+    return seconds >= 0 ? (
       <div className={classes.Timer}>
-          {seconds}
-          {/* { seconds < 10 ? `0${seconds}` : seconds } */}
+        {seconds}
+        {/* { seconds < 10 ? `0${seconds}` : seconds } */}
       </div>
-    )
+    ) : (
+      <div className={classes.timeOut}>
+        Сорян, время вышло
+      </div>
+    );
   }
 }
-
 
 const mapStateToProps = (store) => {
   return {
     seconds: store.quiz.seconds,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     decSeconds: () => dispatch(decSecondsAC()),
-    nextQuestion: () => dispatch(quizAnswerClick())
-  }
-}
+    nextQuestion: () => dispatch(quizAnswerClick()),
+    resetTimerToStart: () => dispatch(resetTimer()),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Timer)
+export default connect(mapStateToProps, mapDispatchToProps)(Timer);

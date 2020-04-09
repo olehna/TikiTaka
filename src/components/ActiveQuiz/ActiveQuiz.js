@@ -4,6 +4,7 @@ import AnswersList from "./AnswersList/AnswersList";
 import Timer from "../UI/Timer/Timer";
 
 const ActiveQuiz = (props) => {
+
   return (
     <div className={classes.ActiveQuiz}>
       <div
@@ -14,7 +15,7 @@ const ActiveQuiz = (props) => {
         }}
       >
         <h1 className={classes.Title}>{props.topic}</h1>
-        <Timer />
+       <Timer />
       </div>
       <div className={classes.imgWrap}>
         <img src={props.ImgLink} alt="" className={classes.Image} />

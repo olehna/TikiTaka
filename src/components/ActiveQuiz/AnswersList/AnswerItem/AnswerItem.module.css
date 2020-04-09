@@ -2,18 +2,20 @@
   background: rgb(119, 119, 119,0.5);
   border-radius: 5px;
   padding: 5px 10px;
+  padding: 20px;
   margin-top: 15px;
   margin-bottom: 0px;
   cursor: pointer;
   width: 48%;
   /* height: 50px; */
-  color:white;
+  color: white;
   text-align: center;
-  line-height: 3em;
+  /* line-height: 3em; */
+  /* line-height: 40px; */
   font-family: 'Muller Narrow Extra Light';
   /* font-size: 16pt; */
   font-weight: 800;
-  letter-spacing:0.5pt
+  letter-spacing: 0.5pt;
 }
 
 .AnswerItem:hover {
