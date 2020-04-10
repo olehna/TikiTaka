@@ -7,13 +7,9 @@
   margin-bottom: 0px;
   cursor: pointer;
   width: 48%;
-  /* height: 50px; */
   color: white;
   text-align: center;
-  /* line-height: 3em; */
-  /* line-height: 40px; */
   font-family: 'Muller Narrow Extra Light';
-  /* font-size: 16pt; */
   font-weight: 800;
   letter-spacing: 0.5pt;
 }
@@ -30,4 +26,10 @@
 
 .AnswerItem.error {
   background: rgb(181, 42, 48, .7);
+}
+
+@media (max-width:500px) {
+  .AnswerItem{
+    font-size: 13px;
+  }
 }

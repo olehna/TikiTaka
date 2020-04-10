@@ -1,20 +1,61 @@
 .Timer {
   background: rgb(246, 205, 99, 0.7);
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
   text-align: center;
-  font-family: 'Muller Narrow Extra Bold';
-  font-size: 28pt;
+  font-family: "Muller Narrow Extra Bold";
+  font-size: 30pt;
   line-height: 2em;
   columns: #b2b2b2;
   align-self: top;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: -15px;
 }
 .timeOut {
   padding: 20px;
   background: rgb(246, 205, 99);
   border: none;
+  font-size: 40px;
   text-align: center;
-  font-family: 'Muller Narrow Extra Bold';
+  font-family: "Muller Narrow Extra Bold";
   border-radius: 10px;
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  .Timer {
+    background: rgb(246, 205, 99, 0.7);
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    font-family: "Muller Narrow Extra Bold";
+    font-size: 50pt;
+    line-height: 2em;
+    columns: #b2b2b2;
+    align-self: top;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+  }
+}
+@media (max-width: 400px) {
+  .Timer {
+    position: absolute;
+    top: 20px;
+    right: -5px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+  }
 }

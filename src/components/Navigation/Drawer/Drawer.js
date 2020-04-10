@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Drawer.module.css";
 import { NavLink } from "react-router-dom";
 import Backdrop from "../../UI/Backdrop/Backdrop";
@@ -91,7 +91,7 @@ function Drawer (props) {
           <ul className={classes.listing} >
             {renderLinks(links)}
           </ul>
-          <a href="./" className={classes.mail}>
+          <a href="https://youtu.be/qks8SgT1B4M" className={classes.mail}>
             <img
               className={classes.iconMail}
               src="./img/Menu/mail.png"

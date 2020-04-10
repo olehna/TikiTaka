@@ -63,7 +63,8 @@
 .userName {
   color: #ffffff;
   text-align: center;
-  font-size: 22px;
+  font-size: 40px;
+  font-family: "Muller Narrow Extra Bold";
 }
 
 .mail {
@@ -83,4 +84,29 @@
 .iconMail {
   width: 25px;
   margin-right: 15px;
+}
+
+
+@media (max-width:400px) {
+  .Drawer {
+    width: 60%;
+    padding: 0 30px;
+  }
+  .Ava {
+    width: 100px;
+  }
+  .linkListing {
+    font-size: 12px;
+  }
+  .icon {
+    width: 20px;
+    margin-right: 10px;
+  }
+  .mail {
+    font-size: 12px;
+  }
+  .iconMail {
+    width: 20px;
+    margin-right: 10px;
+  }
 }
