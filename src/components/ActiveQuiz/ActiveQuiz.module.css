@@ -2,7 +2,7 @@
   padding: 20px;
   color: #2D2D2D;
 
-  
+  position: relative;
   margin: 0 10px;
   box-sizing: border-box;
   display: flex;
@@ -32,7 +32,7 @@
 
 .Title{
   font-family: 'Muller Narrow Extra Bold';
-  font-size: 32pt;
+  font-size: 30pt;
   margin: 0;
   align-self: flex-end;
 }
@@ -41,8 +41,6 @@
   text-align: right;
   color: white;
   z-index: 100;
-  /* top:10px;
-  position: relative; */
 }
 
 .imgWrap {
@@ -64,4 +62,16 @@
 .Image{
   border-radius: 5px;
   width:100%;
+}
+
+@media (min-width:890px) {
+  .imgWrap {
+    height: 472px;
+  }
+}
+
+@media (max-width:500px) {
+  .imgWrap {
+    height: 248px;
+  }
 }

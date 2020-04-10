@@ -63,7 +63,8 @@
 .userName {
   color: #ffffff;
   text-align: center;
-  font-size: 22px;
+  font-size: 40px;
+  font-family: "Muller Narrow Extra Bold";
 }
 
 .mail {

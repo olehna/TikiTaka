@@ -15,7 +15,6 @@ const ActiveQuiz = (props) => {
         }}
       >
         <h1 className={classes.Title}>{props.topic}</h1>
-       <Timer />
       </div>
       <div className={classes.imgWrap}>
         <img src={props.ImgLink} alt="" className={classes.Image} />
@@ -32,6 +31,9 @@ const ActiveQuiz = (props) => {
         answers={props.answers}
         onAnswerClick={props.onAnswerClick}
       />
+      <div className="timerBox">
+        <Timer />
+      </div>
     </div>
   );
 };

@@ -12,7 +12,9 @@ export default class LoadingPage extends Component {
   render() {
     return (
       <div className={classes.main}>
+        <div className={classes.marginTop}>
         <Logo />
+        </div>
         <h1 className={classes.AppTitle}>
           тики
           <br />
