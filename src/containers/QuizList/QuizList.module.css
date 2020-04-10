@@ -138,3 +138,9 @@
     max-width: 480px;
   }
 }
+
+@media (max-width: 400px) {
+  .cardWrap {
+    max-width: 320px;
+  }
+}

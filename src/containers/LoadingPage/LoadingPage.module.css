@@ -47,3 +47,21 @@
 .marginTop {
   margin-top: 150px;
 }
+
+@media (max-width: 400px) {
+  .marginTop {
+    margin-top: 40px;
+  }
+  .logo {
+    width: 150px;
+    height: 150px;
+  }
+  .AppTitle {
+    font-size: 120px;
+    line-height: 70px;
+  }
+  .AppSubTitle {
+    font-size: 28px;
+    margin: 25px auto 0;
+  }
+}

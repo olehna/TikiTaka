@@ -75,3 +75,11 @@
     height: 248px;
   }
 }
+@media (max-width:400px) {
+  .imgWrap {
+    height: 178px;
+  }
+  .questText {
+    font-size: 11pt;
+  }
+}

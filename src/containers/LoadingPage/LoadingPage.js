@@ -6,7 +6,7 @@ export default class LoadingPage extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.props.history.push("/auth");
-    }, 3000);
+    },3000);
   }
 
   render() {
